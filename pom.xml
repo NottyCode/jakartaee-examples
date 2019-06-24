@@ -47,6 +47,7 @@
                         <!-- arquillian.container property is defined by test profiles -->
                         <arquillian.container>${arquillian.container}</arquillian.container>
                         <arquillian.chameleonDistributionDownloadFolder>${session.executionRootDirectory}/target/payara5</arquillian.chameleonDistributionDownloadFolder>
+                        <arquillian.chameleonContainerConfigurationFile>/Users/nottinga/Documents/github/arquillian-container-chameleon/arquillian-chameleon-container-model/src/main/resources/chameleon/default/containers.yaml</arquillian.chameleonContainerConfigurationFile>
                     </systemPropertyVariables>>
                 </configuration>
             </plugin>
@@ -122,13 +123,13 @@
         <dependency>
             <groupId>org.arquillian.container</groupId>
             <artifactId>arquillian-container-chameleon</artifactId>
-            <version>1.0.0.CR5</version>
+            <version>1.0.0.Final-SNAPSHOT</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.arquillian.container</groupId>
             <artifactId>arquillian-container-chameleon-runner</artifactId>
-            <version>1.0.0.CR5</version>
+            <version>1.0.0.Final-SNAPSHOT</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -207,6 +208,12 @@
                 <arquillian.container>tomee:8.0.0-M2:managed</arquillian.container>
             </properties>
         </profile>   
+        <profile>
+            <id>liberty</id>
+            <properties>
+                <arquillian.container>liberty:19.0.0.6:managed</arquillian.container>
+            </properties>
+        </profile>
     </profiles>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
